@@ -2,6 +2,8 @@ node_modules/
 dist/
 work/
 outputs/
+playwright-report/
+test-results/
 .DS_Store
 *.local
 npm-debug.log*

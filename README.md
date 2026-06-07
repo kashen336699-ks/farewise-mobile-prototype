@@ -17,6 +17,23 @@ npm run check
 
 The deployable static output is generated in `dist/`.
 
+## Automated tests
+
+The Playwright suite covers authentication entry points, flight search,
+fare details, price forecasting, booking-site comparison, primary navigation,
+browser errors, and responsive overflow.
+
+```bash
+npx playwright install chromium
+npm run test:e2e
+```
+
+Run against an existing deployment:
+
+```bash
+BASE_URL=http://44.222.153.140 npm run test:e2e
+```
+
 ## Deployment
 
 This is a standard Vite single-page app and can be deployed to Vercel, Netlify,

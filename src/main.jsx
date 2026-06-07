@@ -43,7 +43,7 @@ function Shell({ children, active, go, noNav = false, dark = false }) {
   );
 }
 
-const Back = ({ onClick }) => <button className="back" onClick={onClick}>‹</button>;
+const Back = ({ onClick }) => <button className="back" aria-label="Go back" onClick={onClick}>‹</button>;
 const Badge = ({ children, blue = false, amber = false }) => <span className={`badge ${blue ? "blue" : ""} ${amber ? "amber" : ""}`}>{children}</span>;
 
 function Onboarding({ go }) {
@@ -74,10 +74,10 @@ function SignIn({ go }) {
       <div className="page signin">
         <h1>Welcome back</h1>
         <p className="sub">Sign in to keep tracking the best fares.</p>
-        <label>EMAIL</label>
-        <input defaultValue="alex@example.com" />
-        <label>PASSWORD</label>
-        <input type="password" defaultValue="farewise1" />
+        <label htmlFor="email">EMAIL</label>
+        <input id="email" type="email" autoComplete="email" defaultValue="alex@example.com" />
+        <label htmlFor="password">PASSWORD</label>
+        <input id="password" type="password" autoComplete="current-password" defaultValue="farewise1" />
         <button className="link right">Forgot password?</button>
         <button className="primary" onClick={() => go("home")}>Sign in</button>
         <div className="divider"><span>or continue with</span></div>
